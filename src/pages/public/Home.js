@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect} from "react";
 import { Link } from "react-router-dom";
 
 import {
@@ -17,6 +17,7 @@ import {
   Divider,
   useMediaQuery,
   useTheme,
+
 } from "@mui/material";
 
 import {
@@ -44,6 +45,7 @@ import {
   AccountBalance,
   Calculate,
   Dashboard,
+  Assessment,
 } from "@mui/icons-material";
 
 import "./Home.css";
@@ -201,13 +203,29 @@ const faqs = [
       "Yes. Payment status and outstanding billing information can be tracked from your billing workflow.",
   },
 ];
+const rotatingTexts = [
+  "for Every Business",
+  "for Easy Invoicing",
+  "for Smarter Billing",
+  "for Growing Businesses",
+  "for GST-Compliant Billing",
+];
+
+
 
 function Home() {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const [faqOpen, setFaqOpen] = useState(null);
+const [currentText, setCurrentText] = useState(0);
+useEffect(() => {
+  const interval = setInterval(() => {
+    setCurrentText((prev) => (prev + 1) % rotatingTexts.length);
+  }, 2500);
 
+  return () => clearInterval(interval);
+}, []);
   return (
     <Box className="cloudbill-home">
   <PublicHeader />
@@ -231,14 +249,13 @@ function Home() {
                   label="GST-ready cloud billing software"
                   className="cb-hero-chip"
                 />
-
-                <Typography
-                  component="h1"
-                  className="cb-hero-title"
-                >
-                  Simple Online Billing Software
-                  <span> for Every Business</span>
-                </Typography>
+<Typography
+  component="h1"
+  className="cb-hero-title"
+>
+  Simple Online Billing Software
+  <span> {rotatingTexts[currentText]}</span>
+</Typography>
 
                 <Typography className="cb-hero-description">
                   Create invoices, manage customers, track payments and
@@ -386,10 +403,18 @@ function Home() {
             One billing platform for every business
           </Typography>
 
-          <Typography className="cb-section-description center">
-            From small businesses to growing enterprises, CloudBill helps
-            simplify everyday billing and financial operations.
-          </Typography>
+       <Typography
+  className="cb-section-description"
+  sx={{
+    textAlign: "center",
+    width: "100%",
+    maxWidth: "800px",
+    mx: "auto",
+  }}
+>
+  From small businesses to growing enterprises, CloudBill helps
+  simplify everyday billing and financial operations.
+</Typography>
 
           <div className="cb-business-grid">
             {businessTypes.map((item, index) => (
@@ -407,204 +432,271 @@ function Home() {
           CORE FEATURES
       ========================================================= */}
 
-      <section className="cb-features-section">
-        <Container maxWidth="xl">
+     <section className="cb-features-section">
+  <Container maxWidth="xl">
 
-          <div className="cb-section-heading">
-            <Typography className="cb-section-overline">
-              POWERFUL BILLING
+    {/* Section Heading */}
+    <div
+      className="cb-section-heading"
+      style={{
+        width: "100%",
+        maxWidth: "850px",
+        margin: "0 auto 70px",
+        textAlign: "center",
+      }}
+    >
+      <Typography
+        className="cb-section-overline"
+        sx={{ textAlign: "center", width: "100%" }}
+      >
+        POWERFUL BILLING
+      </Typography>
+
+      <Typography
+        className="cb-section-title"
+        sx={{ textAlign: "center", width: "100%" }}
+      >
+        Master your billing.
+        <span> Grow your business.</span>
+      </Typography>
+
+      <Typography
+        className="cb-section-description"
+        sx={{
+          textAlign: "center",
+          width: "100%",
+          maxWidth: "760px",
+          margin: "0 auto",
+        }}
+      >
+        Everything you need to manage products, invoices, customers,
+        payments and business reports from one connected platform.
+      </Typography>
+    </div>
+
+    {/* Feature List */}
+    <div className="cb-feature-list">
+
+      {features.map((feature, index) => (
+        <div
+          className={`cb-feature-row ${
+            index % 2 !== 0 ? "reverse" : ""
+          }`}
+          key={index}
+        >
+
+          {/* Feature Content */}
+          <div className="cb-feature-content">
+
+            <div className="cb-feature-icon">
+              {feature.icon}
+            </div>
+
+            <Typography className="cb-feature-number">
+              0{index + 1}
             </Typography>
 
-            <Typography className="cb-section-title">
-              Master your billing.
-              <span> Grow your business.</span>
+            <Typography className="cb-feature-title">
+              {feature.title}
             </Typography>
 
-            <Typography className="cb-section-description">
-              Everything you need to manage products, invoices, customers,
-              payments and business reports from one connected platform.
+            <Typography className="cb-feature-text">
+              {feature.text}
             </Typography>
+
+            <Link
+              to="/features"
+              className="cb-feature-link"
+            >
+              Explore feature
+              <ArrowForward />
+            </Link>
+
           </div>
 
-          <div className="cb-feature-list">
+          {/* Feature Visual */}
+          <div className="cb-feature-visual">
 
-            {features.map((feature, index) => (
-              <div
-                className={`cb-feature-row ${
-                  index % 2 !== 0 ? "reverse" : ""
-                }`}
-                key={index}
-              >
+            {/* Products */}
+            {index === 0 && (
+              <div className="cb-product-preview">
 
-                <div className="cb-feature-content">
-
-                  <div className="cb-feature-icon">
-                    {feature.icon}
-                  </div>
-
-                  <Typography className="cb-feature-number">
-                    0{index + 1}
-                  </Typography>
-
-                  <Typography className="cb-feature-title">
-                    {feature.title}
-                  </Typography>
-
-                  <Typography className="cb-feature-text">
-                    {feature.text}
-                  </Typography>
-
-                  <Link to="/features" className="cb-feature-link">
-                    Explore feature
-                    <ArrowForward />
-                  </Link>
-
+                <div className="preview-header">
+                  <span>Products</span>
+                  <button>+ Add Product</button>
                 </div>
 
-                <div className="cb-feature-visual">
-                  {index === 0 && (
-                    <div className="cb-product-preview">
-                      <div className="preview-header">
-                        <span>Products</span>
-                        <button>+ Add Product</button>
-                      </div>
+                {[
+                  "Office Chair",
+                  "Laptop Stand",
+                  "Premium Desk",
+                ].map((product, i) => (
+                  <div className="preview-row" key={i}>
 
-                      {["Office Chair", "Laptop Stand", "Premium Desk"].map(
-                        (product, i) => (
-                          <div className="preview-row" key={i}>
-                            <div className="preview-product-icon">
-                              <Inventory2 />
-                            </div>
-
-                            <div>
-                              <strong>{product}</strong>
-                              <small>Available product</small>
-                            </div>
-
-                            <b>₹{[4500, 2200, 7800][i]}</b>
-                          </div>
-                        )
-                      )}
+                    <div className="preview-product-icon">
+                      <Inventory2 />
                     </div>
-                  )}
 
-                  {index === 1 && (
-                    <div className="cb-invoice-preview">
-                      <div className="invoice-head">
-                        <div>
-                          <strong>INVOICE</strong>
-                          <span>#CB-2026-1048</span>
-                        </div>
-
-                        <CheckCircle />
-                      </div>
-
-                      <div className="invoice-customer">
-                        <span>Bill To</span>
-                        <strong>ABC Enterprises</strong>
-                        <small>Chennai, Tamil Nadu</small>
-                      </div>
-
-                      <Divider />
-
-                      <div className="invoice-item">
-                        <span>Professional Service</span>
-                        <b>₹25,000</b>
-                      </div>
-
-                      <div className="invoice-item">
-                        <span>GST</span>
-                        <b>₹4,500</b>
-                      </div>
-
-                      <div className="invoice-total">
-                        <span>Total</span>
-                        <strong>₹29,500</strong>
-                      </div>
+                    <div>
+                      <strong>{product}</strong>
+                      <small>Available product</small>
                     </div>
-                  )}
 
-                  {index === 2 && (
-                    <div className="cb-payment-preview">
-                      <div className="payment-icon">
-                        <Payments />
-                      </div>
+                    <b>
+                      ₹{[4500, 2200, 7800][i]}
+                    </b>
 
-                      <strong>Payment Received</strong>
+                  </div>
+                ))}
 
-                      <Typography>
-                        ₹48,500
-                      </Typography>
+              </div>
+            )}
 
-                      <span>
-                        Transaction completed successfully
-                      </span>
+            {/* Invoice */}
+            {index === 1 && (
+              <div className="cb-invoice-preview">
 
-                      <div className="payment-status">
-                        <CheckCircle />
-                        Paid
-                      </div>
-                    </div>
-                  )}
+                <div className="invoice-head">
+                  <div>
+                    <strong>INVOICE</strong>
+                    <span>#CB-2026-1048</span>
+                  </div>
 
-                  {index === 3 && (
-                    <div className="cb-customer-preview">
-                      <div className="customer-top">
-                        <PeopleAlt />
-                        <div>
-                          <strong>Customer Management</strong>
-                          <span>384 active customers</span>
-                        </div>
-                      </div>
+                  <CheckCircle />
+                </div>
 
-                      <div className="customer-stat-grid">
-                        <div>
-                          <small>Total</small>
-                          <strong>384</strong>
-                        </div>
+                <div className="invoice-customer">
+                  <span>Bill To</span>
+                  <strong>Rohil Enterprises</strong>
+                  <small>Chennai, Tamil Nadu</small>
+                </div>
 
-                        <div>
-                          <small>Active</small>
-                          <strong>352</strong>
-                        </div>
+                <Divider />
 
-                        <div>
-                          <small>Pending</small>
-                          <strong>32</strong>
-                        </div>
-                      </div>
-                    </div>
-                  )}
+                <div className="invoice-item">
+                  <span>Professional Service</span>
+                  <b>₹25,000</b>
+                </div>
 
-                  {index === 4 && (
-                    <div className="cb-report-preview">
-                      <div className="report-top">
-                        <div>
-                          <span>Business Report</span>
-                          <strong>₹8.42L</strong>
-                        </div>
+                <div className="invoice-item">
+                  <span>GST</span>
+                  <b>₹4,500</b>
+                </div>
 
-                        <TrendingUp />
-                      </div>
-
-                      <div className="report-chart">
-                        <span style={{ height: "40%" }} />
-                        <span style={{ height: "56%" }} />
-                        <span style={{ height: "48%" }} />
-                        <span style={{ height: "72%" }} />
-                        <span style={{ height: "65%" }} />
-                        <span style={{ height: "90%" }} />
-                      </div>
-                    </div>
-                  )}
+                <div className="invoice-total">
+                  <span>Total</span>
+                  <strong>₹29,500</strong>
                 </div>
 
               </div>
-            ))}
+            )}
+
+            {/* Payment */}
+            {index === 2 && (
+              <div className="cb-payment-preview">
+
+                <div className="payment-icon">
+                  <Payments />
+                </div>
+
+                <strong>Payment Received</strong>
+
+                <Typography>
+                  ₹48,500
+                </Typography>
+
+                <span>
+                  Transaction completed successfully
+                </span>
+
+                <div className="payment-status">
+                  <CheckCircle />
+                  Paid
+                </div>
+
+              </div>
+            )}
+
+            {/* Customers */}
+            {index === 3 && (
+              <div className="cb-customer-preview">
+
+                <div className="customer-top">
+
+                  <PeopleAlt />
+
+                  <div>
+                    <strong>
+                      Customer Management
+                    </strong>
+
+                    <span>
+                      384 active customers
+                    </span>
+                  </div>
+
+                </div>
+
+                <div className="customer-stat-grid">
+
+                  <div>
+                    <small>Total</small>
+                    <strong>384</strong>
+                  </div>
+
+                  <div>
+                    <small>Active</small>
+                    <strong>352</strong>
+                  </div>
+
+                  <div>
+                    <small>Pending</small>
+                    <strong>32</strong>
+                  </div>
+
+                </div>
+
+              </div>
+            )}
+
+            {/* Reports */}
+            {index === 4 && (
+              <div className="cb-report-preview">
+
+                <div className="report-top">
+
+                  <div>
+                    <span>Business Report</span>
+                    <strong>₹8.42L</strong>
+                  </div>
+
+                  <TrendingUp />
+
+                </div>
+
+                <div className="report-chart">
+
+                  <span style={{ height: "40%" }} />
+                  <span style={{ height: "56%" }} />
+                  <span style={{ height: "48%" }} />
+                  <span style={{ height: "72%" }} />
+                  <span style={{ height: "65%" }} />
+                  <span style={{ height: "90%" }} />
+
+                </div>
+
+              </div>
+            )}
 
           </div>
-        </Container>
-      </section>
+
+        </div>
+      ))}
+
+    </div>
+
+  </Container>
+</section>
 
       {/* =========================================================
           GST SECTION
@@ -688,7 +780,7 @@ function Home() {
 
                 <div className="gst-business">
                   <span>Invoice To</span>
-                  <strong>ABC Technologies</strong>
+                  <strong>Rohil Technologies</strong>
                   <small>GSTIN: 33ABCDE1234F1Z5</small>
                 </div>
 
@@ -747,75 +839,116 @@ function Home() {
 
           </div>
 
-          <Grid container spacing={3}>
+         <Grid
+  container
+  spacing={3}
+  justifyContent="center"
+  alignItems="stretch"
+  sx={{
+    width: "100%",
+    margin: 0,
+  }}
+><Grid
+  container
+  spacing={3}
+  justifyContent="center"
+  sx={{
+    width: "100%",
+    maxWidth: "1200px",
+    margin: "0 auto",
+  }}
+>
+  <Grid item xs={12} sm={6} md={3}>
+    <Card className="cb-experience-card">
+      <div className="experience-icon">
+        <PeopleAlt />
+      </div>
 
-            <Grid item xs={12} md={4}>
-              <Card className="cb-experience-card">
-                <div className="experience-icon">
-                  <PeopleAlt />
-                </div>
+      <Typography>
+        Customer Management
+      </Typography>
 
-                <Typography>
-                  Customer Management
-                </Typography>
+      <p>
+        Keep customer information, transactions and billing history
+        organized in one place.
+      </p>
 
-                <p>
-                  Keep customer information, transactions and billing history
-                  organized in one place.
-                </p>
+      <div className="experience-mini-ui">
+        <span>Active Customers</span>
+        <strong>384</strong>
+      </div>
+    </Card>
+  </Grid>
 
-                <div className="experience-mini-ui">
-                  <span>Active Customers</span>
-                  <strong>384</strong>
-                </div>
-              </Card>
-            </Grid>
+  <Grid item xs={12} sm={6} md={3}>
+    <Card className="cb-experience-card">
+      <div className="experience-icon">
+        <Description />
+      </div>
 
-            <Grid item xs={12} md={4}>
-              <Card className="cb-experience-card">
-                <div className="experience-icon">
-                  <Description />
-                </div>
+      <Typography>
+        Professional Invoices
+      </Typography>
 
-                <Typography>
-                  Professional Invoices
-                </Typography>
+      <p>
+        Create clean, professional invoices that are easy to
+        understand and share.
+      </p>
 
-                <p>
-                  Create clean, professional invoices that are easy to
-                  understand and share.
-                </p>
+      <div className="experience-mini-ui">
+        <span>Invoices This Month</span>
+        <strong>248</strong>
+      </div>
+    </Card>
+  </Grid>
 
-                <div className="experience-mini-ui">
-                  <span>Invoices This Month</span>
-                  <strong>248</strong>
-                </div>
-              </Card>
-            </Grid>
+  <Grid item xs={12} sm={6} md={3}>
+    <Card className="cb-experience-card">
+      <div className="experience-icon">
+        <Payments />
+      </div>
 
-            <Grid item xs={12} md={4}>
-              <Card className="cb-experience-card">
-                <div className="experience-icon">
-                  <Payments />
-                </div>
+      <Typography>
+        Easy Payments
+      </Typography>
 
-                <Typography>
-                  Easy Payments
-                </Typography>
+      <p>
+        Keep payment records organized and easily identify paid
+        and outstanding invoices.
+      </p>
 
-                <p>
-                  Keep payment records organized and easily identify paid
-                  and outstanding invoices.
-                </p>
+      <div className="experience-mini-ui">
+        <span>Collected</span>
+        <strong>₹4.82L</strong>
+      </div>
+    </Card>
+  </Grid>
 
-                <div className="experience-mini-ui">
-                  <span>Collected</span>
-                  <strong>₹4.82L</strong>
-                </div>
-              </Card>
-            </Grid>
+  <Grid item xs={12} sm={6} md={3}>
+    <Card className="cb-experience-card">
+      <div className="experience-icon">
+        <Assessment />
+      </div>
 
-          </Grid>
+      <Typography>
+        Business Reports
+      </Typography>
+
+      <p>
+        Track sales, payments and business performance with
+        clear and useful reports.
+      </p>
+
+      <div className="experience-mini-ui">
+        <span>Monthly Revenue</span>
+        <strong>₹8.42L</strong>
+      </div>
+    </Card>
+  </Grid>
+</Grid>
+
+
+</Grid>
 
         </Container>
       </section>

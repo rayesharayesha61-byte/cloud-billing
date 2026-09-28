@@ -45,19 +45,19 @@ function App() {
           path="/"
           element={<Home />}
         />
-<Route
-  path="/about"
-  element={<About />
-  }
-/>
-<Route path="/pricing" element={<Pricing />} />
-<Route path="/customers" element={<Customers />} />
-<Route path="/solutions/small-business" element={<SmallBusiness />} />
-<Route path="/solutions/retail" element={<Retail />} />
-<Route path="/solutions/business-services" element={<BusinessServices />} />
-<Route path="/contact" element={<Contact />} />
-<Route path="/faq" element={<FAQ />} />
-<Route path="/features" element={<Features />} />
+        <Route
+          path="/about"
+          element={<About />
+          }
+        />
+        <Route path="/pricing" element={<Pricing />} />
+        <Route path="/customers" element={<Customers />} />
+        <Route path="/solutions/small-business" element={<SmallBusiness />} />
+        <Route path="/solutions/retail" element={<Retail />} />
+        <Route path="/solutions/business-services" element={<BusinessServices />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/faq" element={<FAQ />} />
+        <Route path="/features" element={<Features />} />
         <Route
           path="/login"
           element={<Login />}
@@ -72,11 +72,7 @@ function App() {
 
         <Route
           path="/dashboard"
-          element={
-            <ProtectedRoute>
-              <Dashboard />
-            </ProtectedRoute>
-          }
+          element={<Dashboard />}
         />
 
         <Route

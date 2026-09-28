@@ -249,55 +249,68 @@ const Features = () => {
               business management together in one simple cloud-based platform.
             </Typography>
 
-            <Stack
-              direction={{ xs: "column", sm: "row" }}
-              spacing={2}
-              justifyContent="center"
-            >
-              <Button
-                variant="contained"
-                size="large"
-                onClick={() => navigate("/register")}
-                endIcon={<ArrowForward />}
-                sx={{
-                  px: 4,
-                  py: 1.6,
-                  borderRadius: 2.5,
-                  textTransform: "none",
-                  fontSize: "1rem",
-                  fontWeight: 700,
-                  background: "#4f46e5",
-                  boxShadow: "0 10px 25px rgba(79,70,229,0.25)",
-                  "&:hover": {
-                    background: "#4338ca",
-                  },
-                }}
-              >
-                Start Free Trial
-              </Button>
+       <Box
+  sx={{
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }}
+>
+  <Stack
+    direction={{ xs: "column", sm: "row" }}
+    spacing={2}
+    sx={{
+      width: "100%",
+      justifyContent: "center",
+      alignItems: "center",
+    }}
+  >
+    <Button
+      variant="contained"
+      size="large"
+      onClick={() => navigate("/register")}
+      endIcon={<ArrowForward />}
+      sx={{
+        px: 4,
+        py: 1.6,
+        borderRadius: 2.5,
+        textTransform: "none",
+        fontSize: "1rem",
+        fontWeight: 700,
+        background: "#4f46e5",
+        boxShadow: "0 10px 25px rgba(79,70,229,0.25)",
+        "&:hover": {
+          background: "#4338ca",
+        },
+      }}
+    >
+      Start Free Trial
+    </Button>
 
-              <Button
-                variant="outlined"
-                size="large"
-                onClick={() => navigate("/contact")}
-                sx={{
-                  px: 4,
-                  py: 1.6,
-                  borderRadius: 2.5,
-                  textTransform: "none",
-                  fontSize: "1rem",
-                  fontWeight: 700,
-                  color: "#4f46e5",
-                  borderColor: "#a5b4fc",
-                  "&:hover": {
-                    borderColor: "#4f46e5",
-                    background: "#eef2ff",
-                  },
-                }}
-              >
-                Request a Demo
-              </Button>
-            </Stack>
+    <Button
+      variant="outlined"
+      size="large"
+      onClick={() => navigate("/contact")}
+      sx={{
+        px: 4,
+        py: 1.6,
+        borderRadius: 2.5,
+        textTransform: "none",
+        fontSize: "1rem",
+        fontWeight: 700,
+        color: "#4f46e5",
+        borderColor: "#a5b4fc",
+        "&:hover": {
+          borderColor: "#4f46e5",
+          background: "#eef2ff",
+        },
+      }}
+    >
+      Request a Demo
+    </Button>
+  </Stack>
+</Box>
           </MotionBox>
         </Container>
       </Box>
@@ -816,52 +829,58 @@ const Features = () => {
               cloud-based experience designed for everyday business needs.
             </Typography>
 
-            <Stack
-              direction={{ xs: "column", sm: "row" }}
-              spacing={2}
-              justifyContent="center"
-            >
-              <Button
-                variant="contained"
-                size="large"
-                onClick={() => navigate("/register")}
-                endIcon={<ArrowForward />}
-                sx={{
-                  px: 4,
-                  py: 1.5,
-                  borderRadius: 2.5,
-                  textTransform: "none",
-                  fontWeight: 700,
-                  background: "#4f46e5",
-                  "&:hover": {
-                    background: "#4338ca",
-                  },
-                }}
-              >
-                Start 30-Day Free Trial
-              </Button>
+        <Stack
+  direction={{ xs: "column", sm: "row" }}
+  spacing={2}
+  sx={{
+    width: "100%",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+    margin: "0 auto",
+  }}
+>
+  <Button
+    variant="contained"
+    size="large"
+    onClick={() => navigate("/register")}
+    endIcon={<ArrowForward />}
+    sx={{
+      px: 4,
+      py: 1.5,
+      borderRadius: 2.5,
+      textTransform: "none",
+      fontWeight: 700,
+      background: "#4f46e5",
+      "&:hover": {
+        background: "#4338ca",
+      },
+    }}
+  >
+    Start 30-Day Free Trial
+  </Button>
 
-              <Button
-                variant="outlined"
-                size="large"
-                onClick={() => navigate("/pricing")}
-                sx={{
-                  px: 4,
-                  py: 1.5,
-                  borderRadius: 2.5,
-                  textTransform: "none",
-                  fontWeight: 700,
-                  color: "#4f46e5",
-                  borderColor: "#a5b4fc",
-                  "&:hover": {
-                    borderColor: "#4f46e5",
-                    background: "#eef2ff",
-                  },
-                }}
-              >
-                View Pricing
-              </Button>
-            </Stack>
+  <Button
+    variant="outlined"
+    size="large"
+    onClick={() => navigate("/pricing")}
+    sx={{
+      px: 4,
+      py: 1.5,
+      borderRadius: 2.5,
+      textTransform: "none",
+      fontWeight: 700,
+      color: "#4f46e5",
+      borderColor: "#a5b4fc",
+      "&:hover": {
+        borderColor: "#4f46e5",
+        background: "#eef2ff",
+      },
+    }}
+  >
+    View Pricing
+  </Button>
+</Stack>
           </MotionBox>
         </Container>
       </Box>

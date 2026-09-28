@@ -27,6 +27,7 @@ import {
   SupportAgent,
   ArrowForward,
   EmailOutlined,
+  PaymentOutlined,
 } from "@mui/icons-material";
 
 import PublicHeader from "./PublicHeader";
@@ -731,6 +732,66 @@ function FAQ() {
                       }}
                     >
                       Get assistance with CloudBill.
+                    </Typography>
+                  </Box>
+                </Paper>
+              </Grid>
+                <Grid item xs={12} sm={6} md={5}>
+                <Paper
+                  elevation={0}
+                  sx={{
+                    height: "100%",
+                    p: 3,
+                    display: "flex",
+                    alignItems: "center",
+                    gap: 2,
+                    border: "1px solid #e5e7eb",
+                    borderRadius: "16px",
+                    background: "#ffffff",
+                    transition: "0.25s ease",
+                    "&:hover": {
+                      transform: "translateY(-4px)",
+                      borderColor: "#c7d2fe",
+                      boxShadow:
+                        "0 12px 30px rgba(17,24,39,0.07)",
+                    },
+                  }}
+                >
+                  <Box
+                    sx={{
+                      width: 50,
+                      height: 50,
+                      minWidth: 50,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      borderRadius: "13px",
+                      background: "#eef2ff",
+                      color: "#4f46e5",
+                    }}
+                  >
+                    <PaymentOutlined />
+                  </Box>
+
+                  <Box>
+                    <Typography
+                      sx={{
+                        fontSize: 17,
+                        fontWeight: 800,
+                        color: "#111827",
+                        mb: 0.5,
+                      }}
+                    >
+                      Billing Support
+                    </Typography>
+
+                    <Typography
+                      sx={{
+                        fontSize: 14,
+                        color: "#6b7280",
+                      }}
+                    >
+                      Get help With billing,plans and subscription
                     </Typography>
                   </Box>
                 </Paper>
