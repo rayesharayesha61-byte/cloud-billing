@@ -22,7 +22,7 @@ import {
   SupportAgentOutlined,
   ScheduleOutlined,
   RocketLaunchOutlined,
-  WhatsApp,
+
 } from "@mui/icons-material";
 
 

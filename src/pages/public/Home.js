@@ -8,7 +8,7 @@ import {
   Grid,
   Typography,
   Card,
-  CardContent,
+
   Accordion,
   AccordionSummary,
   AccordionDetails,
@@ -215,7 +215,7 @@ const rotatingTexts = [
 
 function Home() {
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down("md"));
+  // const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const [faqOpen, setFaqOpen] = useState(null);
 const [currentText, setCurrentText] = useState(0);

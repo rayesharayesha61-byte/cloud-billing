@@ -21,7 +21,7 @@ import {
   Settings,
   ArrowForward,
   CheckCircle,
-  CloudDone,
+ 
 } from "@mui/icons-material";
 
 import PublicHeader from "../../components/public/PublicHeader";

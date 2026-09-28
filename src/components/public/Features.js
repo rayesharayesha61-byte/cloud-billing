@@ -22,7 +22,7 @@ import {
   EmailOutlined,
   SecurityOutlined,
   CloudOutlined,
-  SpeedOutlined,
+ 
   AutoGraphOutlined,
   NotificationsActiveOutlined,
 
@@ -38,7 +38,7 @@ import PublicHeader from "./PublicHeader";
 import PublicFooter from "./PublicFooter";
 
 const MotionBox = motion(Box);
-const MotionCard = motion(Card);
+
 
 const features = [
   {
