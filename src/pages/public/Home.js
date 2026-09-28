@@ -15,7 +15,7 @@ import {
   Chip,
   Stack,
   Divider,
-  useMediaQuery,
+
   useTheme,
 
 } from "@mui/material";
@@ -214,7 +214,7 @@ const rotatingTexts = [
 
 
 function Home() {
-  const theme = useTheme();
+  // const theme = useTheme();
   // const isMobile = useMediaQuery(theme.breakpoints.down("md"));
 
   const [faqOpen, setFaqOpen] = useState(null);
