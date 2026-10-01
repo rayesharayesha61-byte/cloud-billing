@@ -179,6 +179,7 @@ const Pricing = () => {
                 fontWeight: 800,
                 letterSpacing: 1.8,
                 mb: 2,
+                pt:5,
               }}
             >
               SIMPLE & TRANSPARENT PRICING

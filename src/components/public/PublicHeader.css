@@ -2,14 +2,25 @@
    PUBLIC HEADER
 ========================================= */
 
-.public-header {
+/* .public-header {
   background: rgba(255, 255, 255, 0.96) !important;
   color: #111827 !important;
   border-bottom: 1px solid #e5e7eb;
   backdrop-filter: blur(14px);
   z-index: 1200 !important;
+} */
+.public-header {
+   background: rgba(255, 255, 255, 0.96) !important;
+  color: #111827 !important;
+    backdrop-filter: blur(14px);
+  border-bottom: 1px solid #e5e7eb;
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1200;
 }
-
 /* =========================================
    TOOLBAR
 ========================================= */

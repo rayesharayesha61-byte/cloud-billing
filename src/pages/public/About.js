@@ -853,675 +853,782 @@ const About = () => {
   component="section"
   className="about-hero"
   sx={{
-    py: { xs: 7, md: 12 },
+    py: { xs: 6, md: 10 },
     background: "#FFFFFF",
     overflow: "hidden",
   }}
 >
   <Container
-    maxWidth="xl"
+    maxWidth={false}
     sx={{
-      display: "flex",
-      justifyContent: "center",
+      px: { xs: 2, sm: 4, md: 6 },
     }}
   >
-    <Grid
-      container
-      spacing={{ xs: 5, md: 8 }}
-      alignItems="center"
-      justifyContent="center"
+    {/* ================= MAIN LEFT + RIGHT ================= */}
+    <Box
       sx={{
         maxWidth: "1250px",
         width: "100%",
-        margin: "0 auto",
+        mx: "auto",
+
+        display: "grid",
+
+        gridTemplateColumns: {
+          xs: "1fr",
+          md: "minmax(0, 1fr) minmax(0, 1fr)",
+        },
+
+        gap: {
+          xs: 6,
+          md: 8,
+        },
+
+        alignItems: "center",
       }}
     >
+      {/* ================================================= */}
+      {/* LEFT CONTENT */}
+      {/* ================================================= */}
 
-      {/* ================= LEFT CONTENT ================= */}
-
-      <Grid
-        item
-        xs={12}
-        md={6}
+      <Box
         sx={{
-          display: "flex",
-          justifyContent: "center",
+          width: "100%",
+          maxWidth: 560,
+
+          justifySelf: {
+            xs: "center",
+            md: "start",
+          },
+
+          textAlign: {
+            xs: "center",
+            md: "left",
+          },
         }}
       >
-        <Box
+        {/* LABEL */}
+
+        <Stack
+          direction="row"
+          spacing={1}
+          alignItems="center"
+          justifyContent={{
+            xs: "center",
+            md: "flex-start",
+          }}
           sx={{
-            width: "100%",
-            maxWidth: 560,
-            mx: "auto",
+            mb: 3,
           }}
         >
+          {/* <CloudDone
+            sx={{
+              color: "#4F46E5",
+              fontSize: 25,
+            }}
+          /> */}
 
-          <Stack
-            direction="row"
-            spacing={1}
-            alignItems="center"
-            sx={{ mb: 3 }}
+          <Typography
+            sx={{
+              color: "#4F46E5",
+              fontWeight: 800,
+              fontSize: "0.8rem",
+              letterSpacing: 1.5,
+              pt:5,
+              textAlign:"center",
+              justifyContent:"center",
+              alignItems:"center",
+            }}
           >
-            <CloudDone sx={{ color: "#4F46E5" }} />
+            ABOUT CLOUDBILL
+          </Typography>
+        </Stack>
+
+        {/* TITLE */}
+
+        <Typography
+          component="h1"
+          sx={{
+            color: "#111827",
+
+            fontSize: {
+              xs: "2.4rem",
+              sm: "3rem",
+              md: "3.6rem",
+            },
+
+            fontWeight: 800,
+            lineHeight: 1.15,
+            letterSpacing: "-1.5px",
+          }}
+        >
+          The smarter way to
+
+          <Box
+            component="span"
+            sx={{
+              display: "block",
+              color: "#4F46E5",
+            }}
+          >
+            manage your billing.
+          </Box>
+        </Typography>
+
+        {/* DESCRIPTION */}
+
+        <Typography
+          sx={{
+            mt: 3,
+            color: "#64748B",
+            fontSize: "1.05rem",
+            lineHeight: 1.9,
+
+            maxWidth: 540,
+
+            mx: {
+              xs: "auto",
+              md: 0,
+            },
+          }}
+        >
+          CloudBill brings invoicing, products, customers,
+          payments and business reports together in one
+          simple cloud billing platform.
+        </Typography>
+
+        {/* BUTTONS */}
+
+        <Stack
+          direction={{
+            xs: "column",
+            sm: "row",
+          }}
+          spacing={2}
+          justifyContent={{
+            xs: "center",
+            md: "flex-start",
+          }}
+          alignItems={{
+            xs: "center",
+            sm: "center",
+          }}
+          sx={{
+            mt: 4,
+          }}
+        >
+          <Button
+            variant="contained"
+            size="large"
+            endIcon={<ArrowForward />}
+            onClick={() => navigate("/register")}
+            sx={{
+              px: 3,
+              py: 1.5,
+              borderRadius: 2,
+
+              backgroundColor: "#4F46E5",
+
+              textTransform: "none",
+              fontWeight: 700,
+
+              boxShadow:
+                "0 10px 25px rgba(79,70,229,0.20)",
+
+              "&:hover": {
+                backgroundColor: "#3730A3",
+
+                boxShadow:
+                  "0 14px 30px rgba(79,70,229,0.28)",
+              },
+            }}
+          >
+            Start Free Trial
+          </Button>
+
+          <Button
+            variant="outlined"
+            size="large"
+            onClick={() => navigate("/features")}
+            sx={{
+              px: 3,
+              py: 1.5,
+              borderRadius: 2,
+
+              borderColor: "#CBD5E1",
+              color: "#334155",
+
+              textTransform: "none",
+              fontWeight: 700,
+
+              "&:hover": {
+                borderColor: "#4F46E5",
+                color: "#4F46E5",
+                backgroundColor: "#EEF2FF",
+              },
+            }}
+          >
+            Explore Features
+          </Button>
+        </Stack>
+
+        {/* FEATURES */}
+
+        <Stack
+          direction="row"
+          spacing={2}
+          flexWrap="wrap"
+          justifyContent={{
+            xs: "center",
+            md: "flex-start",
+          }}
+          sx={{
+            mt: 4,
+            rowGap: 1,
+          }}
+        >
+          {[
+            "30-Day Free Trial",
+            "Easy Setup",
+            "Cloud Based",
+          ].map((item) => (
+            <Stack
+              key={item}
+              direction="row"
+              spacing={0.7}
+              alignItems="center"
+            >
+              <CheckCircle
+                sx={{
+                  color: "#16A34A",
+                  fontSize: 18,
+                }}
+              />
+
+              <Typography
+                sx={{
+                  color: "#64748B",
+                  fontSize: "0.82rem",
+                  fontWeight: 600,
+                }}
+              >
+                {item}
+              </Typography>
+            </Stack>
+          ))}
+        </Stack>
+      </Box>
+
+      {/* ================================================= */}
+      {/* RIGHT DASHBOARD */}
+      {/* ================================================= */}
+
+      <Box
+        sx={{
+          width: "100%",
+          maxWidth: 540,
+
+          justifySelf: {
+            xs: "center",
+            md: "end",
+          },
+
+          position: "relative",
+        }}
+      >
+        {/* GLOW */}
+
+        <Box
+          sx={{
+            position: "absolute",
+
+            inset: {
+              xs: "8% 2%",
+              md: "8% 4%",
+            },
+
+            background:
+              "linear-gradient(135deg,#E0E7FF,#F0FDFA)",
+
+            filter: "blur(55px)",
+
+            borderRadius: "50%",
+
+            zIndex: 0,
+          }}
+        />
+
+        {/* DASHBOARD */}
+
+        <Paper
+          elevation={0}
+          sx={{
+            position: "relative",
+
+            zIndex: 1,
+
+            width: "100%",
+
+            boxSizing: "border-box",
+
+            p: {
+              xs: 1.8,
+              sm: 2.5,
+              md: 3,
+            },
+
+            borderRadius: 4,
+
+            border:
+              "1px solid #E2E8F0",
+
+            backgroundColor: "#FFFFFF",
+
+            boxShadow:
+              "0 25px 70px rgba(15,23,42,0.12)",
+          }}
+        >
+          {/* ============================================= */}
+          {/* DASHBOARD HEADER */}
+          {/* ============================================= */}
+
+          <Box
+            sx={{
+              display: "flex",
+
+              alignItems: "center",
+
+              justifyContent:
+                "space-between",
+
+              pb: 2.5,
+
+              borderBottom:
+                "1px solid #E2E8F0",
+
+              "@media (max-width:600px)": {
+                flexDirection: "column",
+
+                gap: 1.5,
+
+                justifyContent: "center",
+              },
+            }}
+          >
+            {/* CLOUD BILL */}
+
+            <Stack
+              direction="row"
+              spacing={1}
+              alignItems="center"
+              sx={{
+                "@media (max-width:600px)": {
+                  justifyContent: "center",
+                },
+              }}
+            >
+              <Box
+                sx={{
+                  width: 38,
+                  height: 38,
+
+                  display: "grid",
+                  placeItems: "center",
+
+                  borderRadius: 1.5,
+
+                  backgroundColor:
+                    "#EEF2FF",
+
+                  color: "#4F46E5",
+
+                  flexShrink: 0,
+                }}
+              >
+                <CloudDone />
+              </Box>
+
+              <Box
+                sx={{
+                  textAlign: "left",
+
+                  "@media (max-width:600px)": {
+                    textAlign: "center",
+                  },
+                }}
+              >
+                <Typography
+                  sx={{
+                    color: "#1E293B",
+                    fontWeight: 800,
+                    fontSize: "1rem",
+                  }}
+                >
+                  CloudBill
+                </Typography>
+
+                <Typography
+                  sx={{
+                    color: "#94A3B8",
+                    fontSize: "0.7rem",
+                  }}
+                >
+                  Business Dashboard
+                </Typography>
+              </Box>
+            </Stack>
+
+            {/* LIVE */}
+
+            <Box
+              sx={{
+                px: 1.5,
+                py: 0.6,
+
+                borderRadius: 5,
+
+                backgroundColor:
+                  "#DCFCE7",
+
+                color: "#15803D",
+
+                fontSize: "0.7rem",
+
+                fontWeight: 700,
+              }}
+            >
+              ● Live
+            </Box>
+          </Box>
+
+          {/* ============================================= */}
+          {/* TITLE */}
+          {/* ============================================= */}
+
+          <Box
+            sx={{
+              mt: 3,
+              mb: 2.5,
+
+              "@media (max-width:600px)": {
+                textAlign: "center",
+                mt: 2.5,
+              },
+            }}
+          >
+            <Typography
+              sx={{
+                color: "#111827",
+                fontSize: "1.25rem",
+                fontWeight: 800,
+
+                "@media (max-width:600px)": {
+                  fontSize: "1.15rem",
+                },
+              }}
+            >
+              Business Overview
+            </Typography>
+
+            <Typography
+              sx={{
+                mt: 0.5,
+                color: "#94A3B8",
+                fontSize: "0.8rem",
+
+                "@media (max-width:600px)": {
+                  fontSize: "0.75rem",
+                },
+              }}
+            >
+              Your billing performance at a glance
+            </Typography>
+          </Box>
+
+          {/* ============================================= */}
+          {/* STATS */}
+          {/* ============================================= */}
+
+          <Grid
+            container
+            spacing={1.5}
+          >
+            {[
+              {
+                title: "Revenue",
+                value: "₹8.25L",
+                icon: <TrendingUp />,
+              },
+              {
+                title: "Invoices",
+                value: "248",
+                icon: <ReceiptLong />,
+              },
+              {
+                title: "Customers",
+                value: "324",
+                icon: <People />,
+              },
+            ].map((item) => (
+              <Grid
+                item
+                xs={4}
+                key={item.title}
+              >
+                <Box
+                  sx={{
+                    height: "100%",
+                    boxSizing: "border-box",
+
+                    p: {
+                      xs: 1,
+                      sm: 1.6,
+                    },
+
+                    border:
+                      "1px solid #E2E8F0",
+
+                    borderRadius: 2,
+
+                    backgroundColor:
+                      "#FFFFFF",
+                  }}
+                >
+                  <Box
+                    sx={{
+                      color: "#4F46E5",
+
+                      mb: 1,
+
+                      "& svg": {
+                        fontSize: 20,
+                      },
+                    }}
+                  >
+                    {item.icon}
+                  </Box>
+
+                  <Typography
+                    sx={{
+                      color: "#64748B",
+                      fontSize: "0.68rem",
+                      fontWeight: 600,
+                    }}
+                  >
+                    {item.title}
+                  </Typography>
+
+                  <Typography
+                    sx={{
+                      mt: 0.5,
+
+                      color: "#1E293B",
+
+                      fontSize: {
+                        xs: "0.8rem",
+                        sm: "1.1rem",
+                      },
+
+                      fontWeight: 800,
+                    }}
+                  >
+                    {item.value}
+                  </Typography>
+                </Box>
+              </Grid>
+            ))}
+          </Grid>
+
+          {/* ============================================= */}
+          {/* REVENUE CHART */}
+          {/* ============================================= */}
+
+          <Box
+            sx={{
+              mt: 2,
+
+              p: {
+                xs: 1.5,
+                sm: 2.3,
+              },
+
+              border:
+                "1px solid #E2E8F0",
+
+              borderRadius: 2,
+            }}
+          >
+            <Box
+              sx={{
+                display: "flex",
+
+                justifyContent:
+                  "space-between",
+
+                alignItems: "center",
+              }}
+            >
+              <Typography
+                sx={{
+                  color: "#1E293B",
+                  fontSize: "0.85rem",
+                  fontWeight: 800,
+                }}
+              >
+                Revenue Overview
+              </Typography>
+
+              <Typography
+                sx={{
+                  color: "#16A34A",
+                  fontSize: "0.7rem",
+                  fontWeight: 700,
+                }}
+              >
+                +12.5%
+              </Typography>
+            </Box>
+
+            {/* BARS */}
+
+            <Box
+              sx={{
+                height: {
+                  xs: 110,
+                  sm: 140,
+                },
+
+                mt: 2,
+
+                display: "flex",
+
+                alignItems: "flex-end",
+
+                gap: {
+                  xs: 0.7,
+                  sm: 1.5,
+                },
+
+                borderBottom:
+                  "1px solid #E2E8F0",
+              }}
+            >
+              {[35, 48, 42, 65, 58, 78, 95].map(
+                (height, index) => (
+                  <Box
+                    key={index}
+                    sx={{
+                      flex: 1,
+
+                      height: `${height}%`,
+
+                      borderRadius:
+                        "5px 5px 0 0",
+
+                      background:
+                        index === 6
+                          ? "#4F46E5"
+                          : "linear-gradient(180deg,#A5B4FC,#E0E7FF)",
+                    }}
+                  />
+                )
+              )}
+            </Box>
+
+            {/* WEEKS */}
+
+            <Box
+              sx={{
+                display: "flex",
+
+                justifyContent:
+                  "space-between",
+
+                mt: 1,
+
+                color: "#94A3B8",
+
+                fontSize: "0.65rem",
+              }}
+            >
+              <span>Week 1</span>
+              <span>Week 2</span>
+              <span>Week 3</span>
+              <span>Week 4</span>
+            </Box>
+          </Box>
+
+          {/* ============================================= */}
+          {/* LATEST INVOICE */}
+          {/* ============================================= */}
+
+          <Box
+            sx={{
+              mt: 2,
+
+              p: 1.8,
+
+              display: "flex",
+
+              alignItems: "center",
+
+              justifyContent:
+                "space-between",
+
+              gap: 2,
+
+              borderRadius: 2,
+
+              backgroundColor:
+                "#F8FAFC",
+            }}
+          >
+            <Stack
+              direction="row"
+              spacing={1}
+              alignItems="center"
+            >
+              <ReceiptLong
+                sx={{
+                  color: "#4F46E5",
+                  fontSize: 20,
+                }}
+              />
+
+              <Box>
+                <Typography
+                  sx={{
+                    color: "#334155",
+                    fontSize: "0.75rem",
+                    fontWeight: 800,
+                  }}
+                >
+                  Latest Invoice
+                </Typography>
+
+                <Typography
+                  sx={{
+                    color: "#94A3B8",
+                    fontSize: "0.65rem",
+                  }}
+                >
+                  INV-000128
+                </Typography>
+              </Box>
+            </Stack>
 
             <Typography
               sx={{
                 color: "#4F46E5",
-                fontWeight: 800,
                 fontSize: "0.8rem",
-                letterSpacing: 1.5,
+                fontWeight: 800,
               }}
             >
-              ABOUT CLOUDBILL
+              ₹14,750
             </Typography>
-          </Stack>
-
-          <Typography
-            component="h1"
-            sx={{
-              color: "#111827",
-              fontSize: {
-                xs: "2.5rem",
-                sm: "3.2rem",
-                md: "3.8rem",
-              },
-              fontWeight: 800,
-              lineHeight: 1.15,
-              letterSpacing: "-1.5px",
-            }}
-          >
-            The smarter way to
-
-            <Box
-              component="span"
-              sx={{
-                display: "block",
-                color: "#4F46E5",
-              }}
-            >
-              manage your billing.
-            </Box>
-          </Typography>
-
-          <Typography
-            sx={{
-              mt: 3,
-              color: "#64748B",
-              fontSize: "1.05rem",
-              lineHeight: 1.9,
-              maxWidth: 540,
-            }}
-          >
-            CloudBill brings invoicing, products, customers,
-            payments and business reports together in one
-            simple cloud billing platform.
-          </Typography>
-
-          <Stack
-            direction={{ xs: "column", sm: "row" }}
-            spacing={2}
-            sx={{ mt: 4 }}
-          >
-            <Button
-              variant="contained"
-              size="large"
-              endIcon={<ArrowForward />}
-              onClick={() => navigate("/register")}
-              sx={{
-                px: 3,
-                py: 1.5,
-                borderRadius: 2,
-                backgroundColor: "#4F46E5",
-                textTransform: "none",
-                fontWeight: 700,
-                boxShadow: "0 10px 25px rgba(79,70,229,0.20)",
-                "&:hover": {
-                  backgroundColor: "#3730A3",
-                  boxShadow: "0 14px 30px rgba(79,70,229,0.28)",
-                },
-              }}
-            >
-              Start Free Trial
-            </Button>
-
-            <Button
-              variant="outlined"
-              size="large"
-              onClick={() => navigate("/features")}
-              sx={{
-                px: 3,
-                py: 1.5,
-                borderRadius: 2,
-                borderColor: "#CBD5E1",
-                color: "#334155",
-                textTransform: "none",
-                fontWeight: 700,
-                "&:hover": {
-                  borderColor: "#4F46E5",
-                  color: "#4F46E5",
-                  backgroundColor: "#EEF2FF",
-                },
-              }}
-            >
-              Explore Features
-            </Button>
-          </Stack>
-
-          <Stack
-            direction="row"
-            spacing={2}
-            flexWrap="wrap"
-            sx={{
-              mt: 4,
-              rowGap: 1,
-            }}
-          >
-            {[
-              "30-Day Free Trial",
-              "Easy Setup",
-              "Cloud Based",
-            ].map((item) => (
-              <Stack
-                key={item}
-                direction="row"
-                spacing={0.7}
-                alignItems="center"
-              >
-                <CheckCircle
-                  sx={{
-                    color: "#16A34A",
-                    fontSize: 18,
-                  }}
-                />
-
-                <Typography
-                  sx={{
-                    color: "#64748B",
-                    fontSize: "0.82rem",
-                    fontWeight: 600,
-                  }}
-                >
-                  {item}
-                </Typography>
-              </Stack>
-            ))}
-          </Stack>
-
-        </Box>
-      </Grid>
-
-
-      {/* ================= RIGHT PRODUCT PREVIEW ================= */}
-
-      <Grid
-        item
-        xs={12}
-        md={6}
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-
-        <Box
-          sx={{
-            width: "100%",
-            maxWidth: 540,
-            mx: "auto",
-            position: "relative",
-          }}
-        >
-
-          {/* Glow */}
-
-          <Box
-            sx={{
-              position: "absolute",
-              inset: "8% 4%",
-              background:
-                "linear-gradient(135deg, #E0E7FF, #F0FDFA)",
-              filter: "blur(55px)",
-              borderRadius: "50%",
-              zIndex: 0,
-            }}
-          />
-
-          {/* Main Dashboard Box */}
-
-          <Paper
-            elevation={0}
-            sx={{
-              position: "relative",
-              zIndex: 1,
-
-              width: "100%",
-              boxSizing: "border-box",
-
-              p: {
-                xs: 2,
-                sm: 2.5,
-                md: 3,
-              },
-
-              borderRadius: 4,
-              border: "1px solid #E2E8F0",
-              backgroundColor: "#FFFFFF",
-
-              boxShadow:
-                "0 25px 70px rgba(15,23,42,0.12)",
-
-              transform: "translateZ(0)",
-            }}
-          >
-
-           {/* ================= WINDOW HEADER ================= */}
-
-<Box
-  sx={{
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "space-between",
-    pb: 2.5,
-    borderBottom: "1px solid #E2E8F0",
-
-    // MOBILE CENTER
-    "@media (max-width: 600px)": {
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
-      gap: 1.5,
-    },
-  }}
->
-  {/* CLOUD BILL */}
-  <Stack
-    direction="row"
-    spacing={1}
-    alignItems="center"
-    sx={{
-      "@media (max-width: 600px)": {
-        justifyContent: "center",
-        alignItems: "center",
-        width: "100%",
-      },
-    }}
-  >
-    <Box
-      sx={{
-        width: 38,
-        height: 38,
-        display: "grid",
-        placeItems: "center",
-        borderRadius: 1.5,
-        backgroundColor: "#EEF2FF",
-        color: "#4F46E5",
-        flexShrink: 0,
-      }}
-    >
-      <CloudDone />
+          </Box>
+        </Paper>
+      </Box>
     </Box>
-
-    <Box
-      sx={{
-        textAlign: "left",
-
-        "@media (max-width: 600px)": {
-          textAlign: "center",
-        },
-      }}
-    >
-      <Typography
-        sx={{
-          color: "#1E293B",
-          fontWeight: 800,
-          fontSize: "1rem",
-        }}
-      >
-        CloudBill
-      </Typography>
-
-      <Typography
-        sx={{
-          color: "#94A3B8",
-          fontSize: "0.7rem",
-        }}
-      >
-        Business Dashboard
-      </Typography>
-    </Box>
-  </Stack>
-
-  {/* LIVE */}
-  <Box
-    sx={{
-      px: 1.5,
-      py: 0.6,
-      borderRadius: 5,
-      backgroundColor: "#DCFCE7",
-      color: "#15803D",
-      fontSize: "0.7rem",
-      fontWeight: 700,
-
-      "@media (max-width: 600px)": {
-        alignSelf: "center",
-        mx: "auto",
-      },
-    }}
-  >
-    ● Live
-  </Box>
-</Box>
-
-
-{/* ================= TITLE ================= */}
-
-<Box
-  sx={{
-    mt: 3,
-    mb: 2.5,
-
-    "@media (max-width: 600px)": {
-      width: "100%",
-      display: "flex",
-      flexDirection: "column",
-      alignItems: "center",
-      justifyContent: "center",
-      textAlign: "center",
-      mt: 2.5,
-      mb: 2,
-    },
-  }}
->
-  <Typography
-    sx={{
-      color: "#111827",
-      fontSize: "1.25rem",
-      fontWeight: 800,
-
-      "@media (max-width: 600px)": {
-        fontSize: "1.15rem",
-        textAlign: "center",
-      },
-    }}
-  >
-    Business Overview
-  </Typography>
-
-  <Typography
-    sx={{
-      mt: 0.5,
-      color: "#94A3B8",
-      fontSize: "0.8rem",
-
-      "@media (max-width: 600px)": {
-        fontSize: "0.75rem",
-        textAlign: "center",
-      },
-    }}
-  >
-    Your billing performance at a glance
-  </Typography>
-</Box>
-
-
-            {/* STATS */}
-
-            <Grid container spacing={1.5}>
-
-              {[
-                {
-                  title: "Revenue",
-                  value: "₹8.25L",
-                  icon: <TrendingUp />,
-                },
-                {
-                  title: "Invoices",
-                  value: "248",
-                  icon: <ReceiptLong />,
-                },
-                {
-                  title: "Customers",
-                  value: "324",
-                  icon: <People />,
-                },
-              ].map((item) => (
-
-                <Grid item xs={4} key={item.title}>
-
-                  <Box
-                    sx={{
-                      height: "100%",
-                      boxSizing: "border-box",
-                      p: {
-                        xs: 1.1,
-                        sm: 1.6,
-                      },
-                      border: "1px solid #E2E8F0",
-                      borderRadius: 2,
-                      backgroundColor: "#FFFFFF",
-                    }}
-                  >
-
-                    <Box
-                      sx={{
-                        color: "#4F46E5",
-                        mb: 1,
-                        "& svg": {
-                          fontSize: 20,
-                        },
-                      }}
-                    >
-                      {item.icon}
-                    </Box>
-
-                    <Typography
-                      sx={{
-                        color: "#64748B",
-                        fontSize: "0.68rem",
-                        fontWeight: 600,
-                      }}
-                    >
-                      {item.title}
-                    </Typography>
-
-                    <Typography
-                      sx={{
-                        mt: 0.5,
-                        color: "#1E293B",
-                        fontSize: {
-                          xs: "0.85rem",
-                          sm: "1.1rem",
-                        },
-                        fontWeight: 800,
-                      }}
-                    >
-                      {item.value}
-                    </Typography>
-
-                  </Box>
-
-                </Grid>
-
-              ))}
-
-            </Grid>
-
-
-            {/* REVENUE CHART */}
-
-            <Box
-              sx={{
-                mt: 2,
-                p: {
-                  xs: 1.8,
-                  sm: 2.3,
-                },
-                border: "1px solid #E2E8F0",
-                borderRadius: 2,
-              }}
-            >
-
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                }}
-              >
-
-                <Typography
-                  sx={{
-                    color: "#1E293B",
-                    fontSize: "0.85rem",
-                    fontWeight: 800,
-                  }}
-                >
-                  Revenue Overview
-                </Typography>
-
-                <Typography
-                  sx={{
-                    color: "#16A34A",
-                    fontSize: "0.7rem",
-                    fontWeight: 700,
-                  }}
-                >
-                  +12.5%
-                </Typography>
-
-              </Box>
-
-
-              <Box
-                sx={{
-                  height: 140,
-                  mt: 2,
-                  display: "flex",
-                  alignItems: "flex-end",
-                  gap: {
-                    xs: 0.8,
-                    sm: 1.5,
-                  },
-                  borderBottom: "1px solid #E2E8F0",
-                }}
-              >
-
-                {[35, 48, 42, 65, 58, 78, 95].map(
-                  (height, index) => (
-
-                    <Box
-                      key={index}
-                      sx={{
-                        flex: 1,
-                        height: `${height}%`,
-                        borderRadius:
-                          "5px 5px 0 0",
-
-                        background:
-                          index === 6
-                            ? "#4F46E5"
-                            : "linear-gradient(180deg,#A5B4FC,#E0E7FF)",
-                      }}
-                    />
-
-                  )
-                )}
-
-              </Box>
-
-
-              <Box
-                sx={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  mt: 1,
-                  color: "#94A3B8",
-                  fontSize: "0.65rem",
-                }}
-              >
-                <span>Week 1</span>
-                <span>Week 2</span>
-                <span>Week 3</span>
-                <span>Week 4</span>
-              </Box>
-
-            </Box>
-
-
-            {/* INVOICE */}
-
-            <Box
-              sx={{
-                mt: 2,
-                p: 1.8,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "space-between",
-                gap: 2,
-                borderRadius: 2,
-                backgroundColor: "#F8FAFC",
-              }}
-            >
-
-              <Stack
-                direction="row"
-                spacing={1}
-                alignItems="center"
-              >
-
-                <ReceiptLong
-                  sx={{
-                    color: "#4F46E5",
-                    fontSize: 20,
-                  }}
-                />
-
-                <Box>
-
-                  <Typography
-                    sx={{
-                      color: "#334155",
-                      fontSize: "0.75rem",
-                      fontWeight: 800,
-                    }}
-                  >
-                    Latest Invoice
-                  </Typography>
-
-                  <Typography
-                    sx={{
-                      color: "#94A3B8",
-                      fontSize: "0.65rem",
-                    }}
-                  >
-                    INV-000128
-                  </Typography>
-
-                </Box>
-
-              </Stack>
-
-              <Typography
-                sx={{
-                  color: "#4F46E5",
-                  fontSize: "0.8rem",
-                  fontWeight: 800,
-                }}
-              >
-                ₹14,750
-              </Typography>
-
-            </Box>
-
-          </Paper>
-
-        </Box>
-
-      </Grid>
-
-    </Grid>
   </Container>
 </Box>
       {/* ================= INTRODUCTION ================= */}

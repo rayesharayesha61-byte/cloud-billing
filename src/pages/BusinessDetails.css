@@ -1,0 +1,211 @@
+.business-page {
+  min-height: 100vh;
+  padding: 50px 0;
+  background:
+    radial-gradient(
+      circle at top left,
+      rgba(79, 70, 229, 0.12),
+      transparent 35%
+    ),
+    #f8fafc;
+}
+
+/* Header */
+
+.business-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.brand-icon {
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 15px;
+  border-radius: 16px;
+  background: linear-gradient(
+    135deg,
+    #4f46e5,
+    #6366f1
+  );
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.brand-icon svg {
+  font-size: 30px;
+}
+
+.business-title {
+  font-size: 30px !important;
+  font-weight: 800 !important;
+  color: #111827;
+}
+
+.business-subtitle {
+  margin-top: 8px !important;
+  color: #64748b;
+  font-size: 15px !important;
+}
+
+/* Card */
+
+.business-card {
+  padding: 35px;
+  border-radius: 20px !important;
+  border: 1px solid #e2e8f0;
+  background: #ffffff;
+}
+
+/* Alert */
+
+.business-alert {
+  margin-bottom: 25px;
+}
+
+/* Section */
+
+.form-section-title {
+  font-size: 19px !important;
+  font-weight: 700 !important;
+  color: #1e293b;
+  margin-bottom: 20px !important;
+}
+
+.tax-title {
+  margin-top: 35px !important;
+}
+
+/* Inputs */
+
+.business-card .MuiTextField-root {
+  background: #ffffff;
+}
+
+.business-card .MuiOutlinedInput-root {
+  border-radius: 10px;
+}
+
+.business-card .MuiInputLabel-root {
+  color: #64748b;
+}
+
+/* Logo */
+
+.logo-upload {
+  min-height: 56px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.logo-upload .MuiButton-root {
+  min-height: 44px;
+  border-radius: 9px;
+  border-color: #4f46e5;
+  color: #4f46e5;
+  text-transform: none;
+  font-weight: 600;
+}
+
+.logo-name {
+  color: #475569;
+  font-size: 13px !important;
+  word-break: break-word;
+}
+
+/* Submit */
+
+.submit-area {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 40px;
+  padding-top: 25px;
+  border-top: 1px solid #e5e7eb;
+}
+
+.continue-button {
+  min-height: 48px !important;
+  padding: 0 28px !important;
+  border-radius: 10px !important;
+  background: #4f46e5 !important;
+  text-transform: none !important;
+  font-size: 15px !important;
+  font-weight: 700 !important;
+  box-shadow: none !important;
+}
+
+.continue-button:hover {
+  background: #4338ca !important;
+  box-shadow: none !important;
+}
+
+/* Trial */
+
+.trial-note {
+  text-align: center;
+  margin-top: 20px !important;
+  color: #64748b;
+  font-size: 13px !important;
+}
+
+/* Tablet */
+
+@media (max-width: 768px) {
+  .business-page {
+    padding: 30px 15px;
+  }
+
+  .business-card {
+    padding: 25px 20px;
+  }
+
+  .business-title {
+    font-size: 25px !important;
+  }
+
+  .submit-area {
+    justify-content: stretch;
+  }
+
+  .continue-button {
+    width: 100%;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 480px) {
+  .business-page {
+    padding: 20px 10px;
+  }
+
+  .business-card {
+    padding: 20px 15px;
+    border-radius: 15px !important;
+  }
+
+  .business-title {
+    font-size: 22px !important;
+  }
+
+  .business-subtitle {
+    font-size: 13px !important;
+  }
+
+  .form-section-title {
+    font-size: 17px !important;
+  }
+
+  .logo-upload {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .logo-upload label,
+  .logo-upload label button {
+    width: 100%;
+  }
+}

@@ -30,9 +30,9 @@ import Reports from "./pages/reports/Reports";
 import Expenses from "./pages/expenses/Expenses";
 import Subscription from "./pages/subscription/Subscription";
 import Settings from "./pages/settings/Settings";
-
+import BusinessDetails from "./pages/BusinessDetails";
 import ProtectedRoute from "./components/ProtectedRoute";
-
+import TrialActivation from "./pages/TrialActivation";
 function App() {
   return (
     <BrowserRouter>
@@ -48,8 +48,17 @@ function App() {
         <Route
           path="/about"
           element={<About />
+          
           }
         />
+        <Route
+  path="/business-details"
+  element={<BusinessDetails />}
+/>
+  <Route
+  path="/trial-activation"
+  element={<TrialActivation />}
+/>
         <Route path="/pricing" element={<Pricing />} />
         <Route path="/customers" element={<Customers />} />
         <Route path="/solutions/small-business" element={<SmallBusiness />} />

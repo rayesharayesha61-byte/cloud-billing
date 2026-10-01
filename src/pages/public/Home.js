@@ -295,95 +295,120 @@ useEffect(() => {
               </div>
             </Grid>
 
-            <Grid item xs={12} md={6}>
-              <div className="cb-dashboard-wrapper">
+        <Grid
+  item
+  xs={12}
+  md={6}
+  sx={{
+    display: "flex",
+    justifyContent: {
+      xs: "center",
+      md: "flex-end",
+    },
+  }}
+>
+  <Box
+    sx={{
+      width: "100%",
+      maxWidth: 540,
+      transform: {
+        xs: "none",
+        md: "translateX(45px)",
+      },
+    }}
+  >
+    <div className="cb-dashboard-wrapper">
 
-                <div className="cb-dashboard-glow" />
+      <div className="cb-dashboard-glow" />
 
-                <Card className="cb-dashboard-card">
-                  <div className="cb-dashboard-top">
-                    <div>
-                      <span className="cb-small-label">
-                        CLOUD BILL
-                      </span>
+      <Card className="cb-dashboard-card">
 
-                      <Typography variant="h6">
-                        Business Overview
-                      </Typography>
-                    </div>
+      <div className="cb-dashboard-top">
+        <div>
+          <span className="cb-small-label">
+            CLOUD BILL
+          </span>
 
-                    <div className="cb-dashboard-icon">
-                      <Dashboard />
-                    </div>
-                  </div>
+          <Typography variant="h6">
+            Business Overview
+          </Typography>
+        </div>
 
-                  <Grid container spacing={2}>
-                    <Grid item xs={6}>
-                      <div className="cb-stat-card">
-                        <span>Total Revenue</span>
-                        <strong>₹4,82,500</strong>
-                        <small>+18.6%</small>
-                      </div>
-                    </Grid>
+        <div className="cb-dashboard-icon">
+          <Dashboard />
+        </div>
+      </div>
 
-                    <Grid item xs={6}>
-                      <div className="cb-stat-card">
-                        <span>Invoices</span>
-                        <strong>1,248</strong>
-                        <small>+12.4%</small>
-                      </div>
-                    </Grid>
+      <Grid container spacing={2}>
 
-                    <Grid item xs={6}>
-                      <div className="cb-stat-card">
-                        <span>Customers</span>
-                        <strong>384</strong>
-                        <small>+9.2%</small>
-                      </div>
-                    </Grid>
+        <Grid item xs={6}>
+          <div className="cb-stat-card">
+            <span>Total Revenue</span>
+            <strong>₹4,82,500</strong>
+            <small>+18.6%</small>
+          </div>
+        </Grid>
 
-                    <Grid item xs={6}>
-                      <div className="cb-stat-card">
-                        <span>Pending</span>
-                        <strong>₹38,450</strong>
-                        <small>12 invoices</small>
-                      </div>
-                    </Grid>
-                  </Grid>
+        <Grid item xs={6}>
+          <div className="cb-stat-card">
+            <span>Invoices</span>
+            <strong>1,248</strong>
+            <small>+12.4%</small>
+          </div>
+        </Grid>
 
-                  <div className="cb-chart">
-                    <div className="cb-chart-heading">
-                      <span>Revenue Overview</span>
-                      <span>Last 6 Months</span>
-                    </div>
+        <Grid item xs={6}>
+          <div className="cb-stat-card">
+            <span>Customers</span>
+            <strong>384</strong>
+            <small>+9.2%</small>
+          </div>
+        </Grid>
 
-                    <div className="cb-bars">
-                      <span style={{ height: "38%" }} />
-                      <span style={{ height: "54%" }} />
-                      <span style={{ height: "46%" }} />
-                      <span style={{ height: "68%" }} />
-                      <span style={{ height: "60%" }} />
-                      <span style={{ height: "86%" }} />
-                      <span style={{ height: "74%" }} />
-                      <span style={{ height: "94%" }} />
-                    </div>
-                  </div>
+        <Grid item xs={6}>
+          <div className="cb-stat-card">
+            <span>Pending</span>
+            <strong>₹38,450</strong>
+            <small>12 invoices</small>
+          </div>
+        </Grid>
 
-                  <div className="cb-dashboard-footer">
-                    <div>
-                      <CheckCircle />
-                      GST-ready invoices
-                    </div>
+      </Grid>
 
-                    <div>
-                      <CloudDone />
-                      Cloud secured
-                    </div>
-                  </div>
-                </Card>
+      <div className="cb-chart">
+        <div className="cb-chart-heading">
+          <span>Revenue Overview</span>
+          <span>Last 6 Months</span>
+        </div>
 
-              </div>
-            </Grid>
+        <div className="cb-bars">
+          <span style={{ height: "38%" }} />
+          <span style={{ height: "54%" }} />
+          <span style={{ height: "46%" }} />
+          <span style={{ height: "68%" }} />
+          <span style={{ height: "60%" }} />
+          <span style={{ height: "86%" }} />
+          <span style={{ height: "74%" }} />
+          <span style={{ height: "94%" }} />
+        </div>
+      </div>
+
+      <div className="cb-dashboard-footer">
+        <div>
+          <CheckCircle />
+          GST-ready invoices
+        </div>
+
+        <div>
+          <CloudDone />
+          Cloud secured
+        </div>
+      </div>
+
+    </Card>
+  </div>
+    </Box>
+</Grid>
           </Grid>
         </Container>
       </section>
@@ -957,122 +982,177 @@ useEffect(() => {
           MOBILE
       ========================================================= */}
 
-      <section className="cb-mobile-section">
+  <section className="cb-mobile-section">
 
-        <Container maxWidth="xl">
+  <Container maxWidth="lg">
 
-          <Grid
-            container
-            spacing={6}
-            alignItems="center"
-          >
+   <Grid
+  container
+  spacing={{ xs: 4, md: 2 }}
+  alignItems="center"
+  sx={{
+    width: "100%",
+    margin: 0,
+  }}
+>
 
-            <Grid item xs={12} md={6}>
+      {/* ================= LEFT SIDE ================= */}
+  <Grid
+  item
+  xs={12}
+  md={5}
+  sx={{
+    display: "flex",
+    justifyContent: {
+      xs: "center",
+      md: "flex-start",
+    },
+    alignItems: "center",
+    position: "relative",
+    left: {
+      xs: 0,
+      md: -30,
+    },
+  }}
+>
+        <div className="cb-mobile-device">
 
-              <div className="cb-mobile-device">
+          <div className="mobile-notch" />
 
-                <div className="mobile-notch" />
+          <div className="mobile-screen">
 
-                <div className="mobile-screen">
-
-                  <div className="mobile-app-head">
-                    <div>
-                      <small>CloudBill</small>
-                      <strong>Dashboard</strong>
-                    </div>
-
-                    <Dashboard />
-                  </div>
-
-                  <div className="mobile-revenue">
-                    <small>Total Revenue</small>
-                    <strong>₹4,82,500</strong>
-                    <span>
-                      <TrendingUp />
-                      18.6%
-                    </span>
-                  </div>
-
-                  <div className="mobile-cards">
-                    <div>
-                      <ReceiptLong />
-                      <strong>248</strong>
-                      <small>Invoices</small>
-                    </div>
-
-                    <div>
-                      <PeopleAlt />
-                      <strong>384</strong>
-                      <small>Customers</small>
-                    </div>
-                  </div>
-
-                  <div className="mobile-chart">
-                    <span style={{ height: "35%" }} />
-                    <span style={{ height: "58%" }} />
-                    <span style={{ height: "46%" }} />
-                    <span style={{ height: "74%" }} />
-                    <span style={{ height: "62%" }} />
-                    <span style={{ height: "88%" }} />
-                  </div>
-
-                </div>
-
+            <div className="mobile-app-head">
+              <div>
+                <small>CloudBill</small>
+                <strong>Dashboard</strong>
               </div>
 
-            </Grid>
+              <Dashboard />
+            </div>
 
-            <Grid item xs={12} md={6}>
+            <div className="mobile-revenue">
+              <small>Total Revenue</small>
+              <strong>₹4,82,500</strong>
 
-              <Typography className="cb-section-overline">
-                BILLING ON THE GO
-              </Typography>
+              <span>
+                <TrendingUp />
+                18.6%
+              </span>
+            </div>
 
-              <Typography className="cb-section-title">
-                Your billing.
-                <span> Anywhere, anytime.</span>
-              </Typography>
+            <div className="mobile-cards">
 
-              <Typography className="cb-section-description">
-                Access your billing information, customers, invoices and
-                business insights whenever you need them.
-              </Typography>
-
-              <div className="cb-mobile-points">
-
-                <div>
-                  <PhoneAndroid />
-                  <div>
-                    <strong>Mobile friendly</strong>
-                    <span>Works smoothly across mobile devices.</span>
-                  </div>
-                </div>
-
-                <div>
-                  <CloudDone />
-                  <div>
-                    <strong>Cloud access</strong>
-                    <span>Keep your billing data available online.</span>
-                  </div>
-                </div>
-
-                <div>
-                  <Security />
-                  <div>
-                    <strong>Secure workflow</strong>
-                    <span>Designed with business data protection in mind.</span>
-                  </div>
-                </div>
-
+              <div>
+                <ReceiptLong />
+                <strong>248</strong>
+                <small>Invoices</small>
               </div>
 
-            </Grid>
+              <div>
+                <PeopleAlt />
+                <strong>384</strong>
+                <small>Customers</small>
+              </div>
 
-          </Grid>
+            </div>
 
-        </Container>
+            <div className="mobile-chart">
+              <span style={{ height: "35%" }} />
+              <span style={{ height: "58%" }} />
+              <span style={{ height: "46%" }} />
+              <span style={{ height: "74%" }} />
+              <span style={{ height: "62%" }} />
+              <span style={{ height: "88%" }} />
+            </div>
 
-      </section>
+          </div>
+
+        </div>
+      </Grid>
+
+
+      {/* ================= RIGHT SIDE ================= */}
+    <Grid
+  item
+  xs={12}
+  md={7}
+  sx={{
+    display: "flex",
+    flexDirection: "column",
+    justifyContent: "center",
+    alignItems: {
+      xs: "center",
+      md: "flex-start",
+    },
+    textAlign: {
+      xs: "center",
+      md: "left",
+    },
+    position: "relative",
+    left: {
+      xs: 0,
+      md: 30,
+    },
+  }}
+>
+        <Typography className="cb-section-overline">
+          BILLING ON THE GO
+        </Typography>
+
+        <Typography className="cb-section-title">
+          Your billing.
+          <span> Anywhere, anytime.</span>
+        </Typography>
+
+        <Typography className="cb-section-description">
+          Access your billing information, customers, invoices and
+          business insights whenever you need them.
+        </Typography>
+
+        <div className="cb-mobile-points">
+
+          <div>
+            <PhoneAndroid />
+
+            <div>
+              <strong>Mobile friendly</strong>
+              <span>
+                Works smoothly across mobile devices.
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <CloudDone />
+
+            <div>
+              <strong>Cloud access</strong>
+              <span>
+                Keep your billing data available online.
+              </span>
+            </div>
+          </div>
+
+          <div>
+            <Security />
+
+            <div>
+              <strong>Secure workflow</strong>
+              <span>
+                Designed with business data protection in mind.
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </Grid>
+
+    </Grid>
+
+  </Container>
+
+</section>
 
       {/* =========================================================
           BENEFITS
@@ -1411,36 +1491,50 @@ useEffect(() => {
 
             </Grid>
 
-            <Grid item xs={12} md={6}>
+     <Grid
+  item
+  xs={12}
+  md={6}
+  sx={{
+    display: "flex",
+    justifyContent: {
+      xs: "center",
+      md: "flex-end",
+    },
+    position: "relative",
+    left: {
+      xs: 0,
+      md: 80,
+    },
+  }}
+>
+  <div className="cb-security-visual">
 
-              <div className="cb-security-visual">
+    <div className="security-lock">
+      <Security />
+    </div>
 
-                <div className="security-lock">
-                  <Security />
-                </div>
+    <Typography>
+      Protected Billing Environment
+    </Typography>
 
-                <Typography>
-                  Protected Billing Environment
-                </Typography>
+    <div className="security-line">
+      <CheckCircle />
+      Secure Access
+    </div>
 
-                <div className="security-line">
-                  <CheckCircle />
-                  Secure Access
-                </div>
+    <div className="security-line">
+      <CheckCircle />
+      Cloud Based
+    </div>
 
-                <div className="security-line">
-                  <CheckCircle />
-                  Cloud Based
-                </div>
+    <div className="security-line">
+      <CheckCircle />
+      Business Data Protection
+    </div>
 
-                <div className="security-line">
-                  <CheckCircle />
-                  Business Data Protection
-                </div>
-
-              </div>
-
-            </Grid>
+  </div>
+</Grid>
 
           </Grid>
 

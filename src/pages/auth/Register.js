@@ -193,7 +193,7 @@ function Register() {
       );
 
       setTimeout(() => {
-        navigate("/login");
+        navigate("/business-details");
       }, 1800);
     } catch (err) {
       console.error("Registration Error:", err);

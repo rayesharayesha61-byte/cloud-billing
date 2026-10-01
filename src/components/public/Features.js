@@ -205,6 +205,7 @@ const Features = () => {
               sx={{
                 mb: 3,
                 px: 1,
+                pt:5,
                 py: 2.5,
                 fontWeight: 800,
                 color: "#4338ca",
@@ -664,46 +665,58 @@ const Features = () => {
                 />
 
                 {/* Statistics */}
-                <Grid container spacing={2}>
-                  {[
-                    ["Total Sales", "₹1,24,500"],
-                    ["Invoices", "248"],
-                    ["Customers", "126"],
-                    ["Products", "342"],
-                  ].map(([title, value]) => (
-                    <Grid item xs={6} key={title}>
-                      <Box
-                        sx={{
-                          p: 2,
-                          borderRadius: 3,
-                          background: "rgba(255,255,255,0.04)",
-                          border:
-                            "1px solid rgba(148,163,184,0.08)",
-                        }}
-                      >
-                        <Typography
-                          sx={{
-                            color: "#94a3b8",
-                            fontSize: "0.78rem",
-                            mb: 0.8,
-                          }}
-                        >
-                          {title}
-                        </Typography>
+             <Grid container spacing={2}>
+  {[
+    ["Total Sales", "₹1,24,500"],
+    ["Invoices", "248"],
+    ["Customers", "126"],
+    ["Products", "342"],
+  ].map(([title, value]) => (
+    <Grid
+      item
+      xs={6}
+      key={title}
+      sx={{
+        display: "flex",
+        minWidth: 0,
+      }}
+    >
+      <Box
+        sx={{
+          width: "100%",
+          height: 110,
+          p: 2,
+          borderRadius: 3,
+          background: "rgba(255,255,255,0.04)",
+          border: "1px solid rgba(148,163,184,0.08)",
+          boxSizing: "border-box",
+          overflow: "hidden",
+        }}
+      >
+        <Typography
+          sx={{
+            color: "#94a3b8",
+            fontSize: "0.78rem",
+            mb: 1,
+          }}
+        >
+          {title}
+        </Typography>
 
-                        <Typography
-                          sx={{
-                            color: "#ffffff",
-                            fontSize: "1.15rem",
-                            fontWeight: 800,
-                          }}
-                        >
-                          {value}
-                        </Typography>
-                      </Box>
-                    </Grid>
-                  ))}
-                </Grid>
+        <Typography
+          sx={{
+            color: "#ffffff",
+            fontSize: "1.15rem",
+            fontWeight: 800,
+            whiteSpace: "nowrap",
+          }}
+        >
+          {value}
+        </Typography>
+      </Box>
+    </Grid>
+  ))}
+</Grid>
 
                 {/* Analytics */}
                 <Box

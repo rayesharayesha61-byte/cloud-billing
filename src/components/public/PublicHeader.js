@@ -58,11 +58,11 @@ function PublicHeader() {
     <>
       {/* ================= HEADER ================= */}
 
-      <AppBar
-        position="sticky"
-        elevation={0}
-        className="public-header"
-      >
+   <AppBar
+  position="fixed"
+  elevation={0}
+  className="public-header"
+>
         <Container maxWidth="xl">
           <Toolbar className="public-toolbar">
 

@@ -297,17 +297,20 @@ ${formData.message}
                 textAlign: "center",
               }}
             >
-              <Typography
-                sx={{
-                  color: "#4f46e5",
-                  fontWeight: 800,
-                  fontSize: 13,
-                  letterSpacing: 1.8,
-                  mb: 2,
-                }}
-              >
-                CONTACT CLOUDBILL
-              </Typography>
+           <section className="cb-contact-hero">
+  <Typography
+    sx={{
+      color: "#4f46e5",
+      fontWeight: 800,
+      fontSize: 13,
+      letterSpacing: 1.8,
+      mb: 2,
+      pt:5,
+    }}
+  >
+    CONTACT CLOUDBILL
+  </Typography>
+  </section>
 
               <Typography
                 sx={{
